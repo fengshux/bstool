@@ -1,0 +1,4 @@
+!/bin/bash
+name=$(pwd | rev | awk -F \/ '{print $1}' | rev)
+echo restart $name
+pm2 reload $name && pm2 logs $name
